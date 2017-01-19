@@ -29,8 +29,10 @@ namespace MVC_DataExploration.Controllers
         public ActionResult Create(Customer MyCustomer)
         {
             //add the new customer to my set of customers.
-            MyCustomer();
-            return View();
+            db.Customers.Add(MyCustomer);
+            //Updates the database
+            db.SaveChanges();
+            return View("Index", db.Customers);
         }
     }
 }
