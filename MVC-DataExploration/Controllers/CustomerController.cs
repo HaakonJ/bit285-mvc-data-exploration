@@ -16,5 +16,21 @@ namespace MVC_DataExploration.Controllers
         {
             return View(db.Customers);
         }
+
+        //GET: Create 
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        //POST: Create
+        [HttpPost]
+        public ActionResult Create(Customer MyCustomer)
+        {
+            //add the new customer to my set of customers.
+            MyCustomer();
+            return View();
+        }
     }
 }
