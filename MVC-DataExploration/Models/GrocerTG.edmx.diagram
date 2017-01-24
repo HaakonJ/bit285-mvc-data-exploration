@@ -6,6 +6,11 @@
     <edmx:Diagrams>
       <Diagram DiagramId="190dc5adadcd48dea6e8e29fe38ea0b8" Name="Diagram1">
         <EntityTypeShape EntityType="grocertogoModel1.Product" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="grocertogoModel1.Category" Width="1.5" PointX="0.75" PointY="4.125" />
+        <EntityTypeShape EntityType="grocertogoModel1.ProductDetail" Width="1.5" PointX="3" PointY="0.875" />
+        <AssociationConnector Association="grocertogoModel1.FK_Product_Category" />
+        <AssociationConnector Association="grocertogoModel1.FK_ProductDetails_Product" />
+        <EntityTypeShape EntityType="grocertogoModel1.Customer" Width="1.5" PointX="3.125" PointY="4.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

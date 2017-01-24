@@ -14,10 +14,20 @@ namespace MVC_DataExploration.Models
     
     public partial class Product
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Product()
+        {
+            this.ProductDetails = new HashSet<ProductDetail>();
+        }
+    
         public int ProductId { get; set; }
         public Nullable<int> Category { get; set; }
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
         public Nullable<decimal> UnitPrice { get; set; }
+    
+        public virtual Category Category1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductDetail> ProductDetails { get; set; }
     }
 }

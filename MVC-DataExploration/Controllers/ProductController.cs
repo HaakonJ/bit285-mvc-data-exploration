@@ -8,12 +8,31 @@ namespace MVC_DataExploration.Controllers
 {
     public class ProductController : Controller
     {
-        // GET: Product
+        
+        private grocertogo db = new grocertogo();
+
+        // GET: Customer
         public ActionResult Index()
         {
-            //private 
-    
+            return View(db.Product);
+        }
+
+        //GET: Create 
+        [HttpGet]
+        public ActionResult Create()
+        {
             return View();
+        }
+
+        //POST: Create
+        [HttpPost]
+        public ActionResult Create(Product MyProduct)
+        {
+            //add the new customer to my set of customers.
+            db.Product.Add(MyProduct);
+            //Updates the database
+            db.SaveChanges();
+            return View("Index", db.Product);
         }
     }
 }
