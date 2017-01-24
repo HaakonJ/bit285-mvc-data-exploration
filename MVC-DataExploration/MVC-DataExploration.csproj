@@ -134,6 +134,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Customer.cs">
+      <DependentUpon>GrocerToGo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>GrocerToGo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\GrocerToGo.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
