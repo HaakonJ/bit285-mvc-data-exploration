@@ -25,7 +25,5 @@ namespace MVC_DataExploration.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
-        public virtual DbSet<Customer> Customers { get; set; }
     }
 }

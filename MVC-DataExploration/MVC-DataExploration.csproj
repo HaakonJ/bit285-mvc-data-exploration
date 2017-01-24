@@ -131,14 +131,24 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Customer.cs">
-      <DependentUpon>GrocerToGo.tt</DependentUpon>
+    <Compile Include="Models\GrocerTG.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrocerTG.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\C__MigrationHistory.cs">
-      <DependentUpon>GrocerToGo.tt</DependentUpon>
+    <Compile Include="Models\GrocerTG.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrocerTG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GrocerTG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrocerTG.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\GrocerToGo.Context.cs">
       <AutoGen>True</AutoGen>
@@ -155,17 +165,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GrocerToGo.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>GrocerTG.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\artists.xml" />
     <Content Include="App_Data\grocertogo.mdb" />
+    <Content Include="App_Data\grocertogo.mdf" />
+    <Content Include="App_Data\grocertogo_log.ldf">
+      <DependentUpon>grocertogo.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\GrocerTG.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GrocerTG.edmx</DependentUpon>
+      <LastGenOutput>GrocerTG.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\GrocerTG.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GrocerTG.edmx</DependentUpon>
+      <LastGenOutput>GrocerTG.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\GrocerToGo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GrocerToGo.Context.cs</LastGenOutput>
@@ -184,6 +211,13 @@
     </EntityDeploy>
     <Content Include="Models\GrocerToGo.edmx.diagram">
       <DependentUpon>GrocerToGo.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\GrocerTG.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GrocerTG.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\GrocerTG.edmx.diagram">
+      <DependentUpon>GrocerTG.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -211,6 +245,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
