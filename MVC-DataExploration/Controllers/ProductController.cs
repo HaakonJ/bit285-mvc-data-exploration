@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MVC_DataExploration.Models;
 
 namespace MVC_DataExploration.Controllers
 {
     public class ProductController : Controller
     {
         
-        private grocertogo db = new grocertogo();
+        private grocertogoEntities db = new grocertogoEntities();
 
         // GET: Customer
         public ActionResult Index()
         {
-            return View(db.Product);
+            return View(db.Products);
         }
 
         //GET: Create 
@@ -29,10 +30,10 @@ namespace MVC_DataExploration.Controllers
         public ActionResult Create(Product MyProduct)
         {
             //add the new customer to my set of customers.
-            db.Product.Add(MyProduct);
+            db.Products.Add(MyProduct);
             //Updates the database
             db.SaveChanges();
-            return View("Index", db.Product);
+            return View("Index", db.Products);
         }
     }
 }
